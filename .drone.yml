@@ -1,0 +1,8 @@
+---
+pipeline:
+  publish_ansible:
+    image: plugins/docker
+    repo: sonerdy/ansible
+    tags: latest
+    dockerfile: ansible.dockerfile
+    secrets: [ docker_username, docker_password ]
