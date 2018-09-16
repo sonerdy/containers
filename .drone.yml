@@ -1,6 +1,8 @@
 ---
 pipeline:
   publish_ansible:
+    when:
+      event: deployment
     image: plugins/docker
     repo: sonerdy/ansible
     tags: latest
