@@ -8,3 +8,13 @@ pipeline:
     tags: latest
     dockerfile: ansible.dockerfile
     secrets: [ docker_username, docker_password ]
+
+  publish_ruby_oracle:
+    when:
+      event: deployment
+    image: plugins/docker
+    repo: sonerdy/ruby-2.3.6-oracle
+    tags: latest
+    dockerfile: ruby_oracle/ruby-2.3.6-oracle.dockerfile
+    context: ruby_oracle
+    secrets: [ docker_username, docker_password ]
